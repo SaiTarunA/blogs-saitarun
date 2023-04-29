@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/blogs-saitarun/static/css/main.91555471.css",
+    "main.js": "/blogs-saitarun/static/js/main.b6c15066.js",
+    "index.html": "/blogs-saitarun/index.html",
+    "main.91555471.css.map": "/blogs-saitarun/static/css/main.91555471.css.map",
+    "main.b6c15066.js.map": "/blogs-saitarun/static/js/main.b6c15066.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91555471.css",
+    "static/js/main.b6c15066.js"
+  ]
+}
