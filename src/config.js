@@ -8,12 +8,16 @@ export const CONFIG = {
   NavigationBar: {
     Logo: {
       LogoName: "SAI TARUN",
-      SubLogoName: "blogs",
+      SubLogoName: "<blogs />",
     },
     NavLinks: [
       {
         name: "Home",
         link: "/",
+      },
+      {
+        name: "Blogs",
+        link: "/all",
       },
       {
         name: "About",

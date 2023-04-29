@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { CONFIG } from "../../../config";
 import "./index.css";
 import { LoaderBackground, LoaderText } from "./styles";
@@ -15,6 +16,15 @@ const DefaultLoader = () => {
   const textToShow = CONFIG.LoaderText;
   const animationTime = 2.5; // In seconds
   const caretBlinkTime = 1.25; // In seconds
+
+  useEffect(() => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    return () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    };
+  }, []);
 
   return (
     <LoaderBackground

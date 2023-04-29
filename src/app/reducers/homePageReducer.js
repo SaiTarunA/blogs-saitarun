@@ -2,33 +2,28 @@ import { homePage as homePageActionTypes } from "../actions/actionTypes.js";
 import { updateObject } from "../utility";
 
 const initialState = {
-  userProfile: {},
+  allBlogs: {},
   loading: {
-    userProfile: false,
+    allBlogs: false,
   },
 };
 
 export const homePageReducer = (state = initialState, action) => {
   switch (action.type) {
-    case homePageActionTypes.type[
-      homePageActionTypes.FETCH_USER_PROFILE_LOADING
-    ]:
+    case homePageActionTypes.type[homePageActionTypes.FETCH_ALL_BLOGS_LOADING]:
       return updateObject(state, {
-        loading: { ...state.loading, userProfile: true },
+        loading: { ...state.loading, allBlogs: true },
+        allBlogs: initialState.allBlogs,
       });
-    case homePageActionTypes.type[
-      homePageActionTypes.FETCH_USER_PROFILE_SUCCESS
-    ]:
+    case homePageActionTypes.type[homePageActionTypes.FETCH_ALL_BLOGS_SUCCESS]:
       return updateObject(state, {
-        userProfile: action.userProfile,
-        loading: { ...state.loading, userProfile: false },
+        allBlogs: action.allBlogs,
+        loading: { ...state.loading, allBlogs: false },
       });
-    case homePageActionTypes.type[
-      homePageActionTypes.FETCH_USER_PROFILE_FAILURE
-    ]:
+    case homePageActionTypes.type[homePageActionTypes.FETCH_ALL_BLOGS_FAILURE]:
       return updateObject(state, {
-        userProfile: initialState.userProfile,
-        loading: { ...state.loading, userProfile: false },
+        allBlogs: initialState.allBlogs,
+        loading: { ...state.loading, allBlogs: false },
       });
     default:
       return state;

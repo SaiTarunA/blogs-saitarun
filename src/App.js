@@ -11,6 +11,9 @@ import PublicRoute from "./routes/PublicRoute";
 import Home from "./pages/Home";
 import PrivateRoute from "./routes/PrivateRoute";
 import Error404 from "./pages/Error404";
+import AllBlogs from "./pages/AllBlogs";
+import About from "./pages/About";
+import BlogDetail from "./pages/BlogDetail";
 
 const App = (props) => {
   const { mode, changeThemeMode } = props;
@@ -33,6 +36,21 @@ const App = (props) => {
       <Routes>
         {/* PUBLIC Routes */}
         <Route exact path="/" element={<PublicRoute component={Home} />} />
+        <Route
+          exact
+          path="/about"
+          element={<PublicRoute component={About} />}
+        />
+        <Route
+          exact
+          path="/all"
+          element={<PublicRoute component={AllBlogs} />}
+        />
+        <Route
+          exact
+          path="/blog-detail/:blogId"
+          element={<PublicRoute component={BlogDetail} />}
+        />
 
         {/* PRIVATE Routes */}
         {/* <Route exact path="/abcd" element={<PrivateRoute component={Home} />} /> */}

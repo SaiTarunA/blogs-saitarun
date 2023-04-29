@@ -1,43 +1,38 @@
-// import { homePage as homePageActionTypes } from "./actionTypes.js";
+import axios from "axios";
+import { homePage as homePageActionTypes } from "./actionTypes.js";
+import { NetworkingUtil } from "../NetworkUtil.js";
 
-export const fetchUserProfile = (userId) => {
-  //   return (dispatch) => {
-  //     dispatch(homePageUserProfileLoading());
-  //     // TODO: Specify URL Name Below
-  //     const url = "";
-  //     axios
-  //       .get(url)
-  //       .then((response) => {
-  //         dispatch(homePageUserProfileSuccess(response.data));
-  //       })
-  //       .catch((error) => {
-  //         dispatch(homePageUserProfileFailure(error));
-  //       });
-  //   };
+export const fetchAllBlogs = () => {
+  return (dispatch) => {
+    dispatch(homePageAllBlogsLoading());
+    const url = NetworkingUtil("allBlogs");
+    axios
+      .get(url)
+      .then((response) => {
+        dispatch(homePageAllBlogsSuccess(response.data));
+      })
+      .catch((error) => {
+        dispatch(homePageAllBlogsFailure(error));
+      });
+  };
 };
 
-// const homePageUserProfileLoading = () => {
-//   return {
-//     type: homePageActionTypes.type[
-//       homePageActionTypes.FETCH_USER_PROFILE_LOADING
-//     ],
-//   };
-// };
+const homePageAllBlogsLoading = () => {
+  return {
+    type: homePageActionTypes.type[homePageActionTypes.FETCH_ALL_BLOGS_LOADING],
+  };
+};
 
-// const homePageUserProfileSuccess = (userProfile) => {
-//   return {
-//     type: homePageActionTypes.type[
-//       homePageActionTypes.FETCH_USER_PROFILE_SUCCESS
-//     ],
-//     userProfile: userProfile,
-//   };
-// };
+const homePageAllBlogsSuccess = (allBlogs) => {
+  return {
+    type: homePageActionTypes.type[homePageActionTypes.FETCH_ALL_BLOGS_SUCCESS],
+    allBlogs: allBlogs,
+  };
+};
 
-// const homePageUserProfileFailure = (error) => {
-//   return {
-//     type: homePageActionTypes.type[
-//       homePageActionTypes.FETCH_USER_PROFILE_FAILURE
-//     ],
-//     error: error,
-//   };
-// };
+const homePageAllBlogsFailure = (error) => {
+  return {
+    type: homePageActionTypes.type[homePageActionTypes.FETCH_ALL_BLOGS_FAILURE],
+    error: error,
+  };
+};

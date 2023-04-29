@@ -14,7 +14,7 @@ const PrivateLayout = ({ children }) => {
     <Box>
       <NavigationBar />
       <Container maxWidth="xl">
-        <Box sx={{ my: 4 }}>{children}</Box>
+        <Box sx={{ my: 3 }}>{children}</Box>
       </Container>
     </Box>
   );

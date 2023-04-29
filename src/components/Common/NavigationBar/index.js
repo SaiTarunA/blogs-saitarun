@@ -70,7 +70,7 @@ const NavigationBar = (props) => {
   return (
     <React.Fragment>
       <HideOnScroll {...props}>
-        <AppBar>
+        <AppBar position="sticky">
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               <Box
@@ -200,8 +200,6 @@ const NavigationBar = (props) => {
           </Container>
         </AppBar>
       </HideOnScroll>
-      {/* For NavBar height */}
-      <Toolbar />
     </React.Fragment>
   );
 };

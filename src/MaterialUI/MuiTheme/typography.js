@@ -23,7 +23,7 @@ export const typography = (palette) => {
       "sans-serif",
     ].join(","),
     ...getStyleObject(headers, {
-      fontFamily: "'Big Shoulders Text', cursive",
+      fontFamily: "'Red Hat Display', sans-serif",
     }),
     button: {
       fontFamily: "'Red Rose', cursive",
@@ -37,6 +37,7 @@ export const typography = (palette) => {
     }),
     h4: {
       cursor: "pointer",
+      fontFamily: `'Barlow Condensed', sans-serif`,
       ...(palette.mode === "light"
         ? {
             "&:hover": {

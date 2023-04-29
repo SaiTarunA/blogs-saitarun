@@ -34,7 +34,7 @@ Change original favicon.ico with the one you generated
 
 ### Change logo192, logo512
 
-Change original _logo192_, _logo512_ with **android-chrome-192x192**, **android-chrome-192x192**
+Change original _logo192_, _logo512_ with **android-chrome-192x192**, **android-chrome-512x512**
 
 ### Change manifest.json name, short_name to your liking
 
